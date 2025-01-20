@@ -48,11 +48,16 @@
   font-weight: 500;
   cursor: pointer;
   padding: 12px 24px;
+  
 }
 
 .nav-link-active {
   composes: nav-link;
   color: var(--primary-color, #333);
+
+    color: #bfafa6;
+    font-weight: bold;
+  
 }
 
 .hero-section {

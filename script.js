@@ -68,3 +68,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all navigation links
+    const navLinks = document.querySelectorAll(".nav-link");
+  
+    // Add click event listeners to each link
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default anchor click behavior
+  
+        // Get the target section's ID from the href attribute
+        const targetId = link.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(targetId);
+  
+        // Scroll to the target section smoothly
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    });
+  });
+  
