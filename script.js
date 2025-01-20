@@ -1,12 +1,11 @@
-<script>
-  // Fade-in animation for the "About" section
+
   document.addEventListener("DOMContentLoaded", () => {
     const aboutSection = document.querySelector(".about-section");
     const aboutImage = document.querySelector(".about-image-wrapper img");
     const aboutContent = document.querySelector(".about-content");
 
     const observer = new IntersectionObserver(
-      (entries) => {
+      (entries)=> {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             aboutImage.style.opacity = "1";
@@ -35,4 +34,3 @@
       button.style.boxShadow = "none";
     });
   });
-</script>
