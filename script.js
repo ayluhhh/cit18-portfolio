@@ -90,3 +90,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+  document.addEventListener("DOMContentLoaded", () => {
+    // Social Media Button Click Tracking
+    const socialLinks = document.querySelectorAll(".social-icon");
+    socialLinks.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const platform = event.currentTarget.querySelector("i").classList[1];
+        console.log(`Social media button clicked: ${platform}`);
+      });
+    });
+  
+    // Copy-to-Clipboard for Contact Details
+    const contactValues = document.querySelectorAll(".contact-value");
+    contactValues.forEach((value) => {
+      value.addEventListener("click", () => {
+        navigator.clipboard.writeText(value.textContent).then(() => {
+          alert(`Copied to clipboard: ${value.textContent}`);
+        });
+      });
+    });
+  
+    // Hover Effects for Contact Cards
+    const contactCards = document.querySelectorAll(".contact-card");
+    contactCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        card.classList.add("hovered");
+      });
+      card.addEventListener("mouseleave", () => {
+        card.classList.remove("hovered");
+      });
+    });
+  });
+  
