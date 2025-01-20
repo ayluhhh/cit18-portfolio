@@ -34,3 +34,37 @@
       button.style.boxShadow = "none";
     });
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const processCards = document.querySelectorAll(".process-card");
+  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+  
+    processCards.forEach((card) => {
+      observer.observe(card);
+    });
+  });
+  
+  const processCards = document.querySelectorAll(".process-card");
+  processCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "scale(1.05)";
+      card.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.3)";
+    });
+  
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "scale(1)";
+      card.style.boxShadow = "none";
+    });
+  });
+  
